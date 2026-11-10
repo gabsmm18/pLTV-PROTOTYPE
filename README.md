@@ -19,8 +19,17 @@ Ad platforms like Meta and Google usually value a new customer by their **first 
 
 ## Results
 
-See the **Summary of results** section at the end of the notebook.
+1. Data quality. Only 74.4% of raw rows were usable for LTV; the main loss is missing customer IDs (22.8% of rows). 4.2% of purchased value was returned, so ignoring returns would overstate customer value.
 
+2. Repeat behaviour. 72.4% of customers buy at least twice; the median gap between the 1st and 2nd purchase is 56 days.
+
+3. Target. In the cohort of 3,085 new customers, 48.5% bring no value in the following 180 days, while the top 10% bring 60.0% of all future value.
+
+4. Naive signal vs model. Ranking customers by first-order value, the top 20% hold 44.7% of future value. With gradient boosting, the top 20% hold 54.5% (Spearman 0.32 vs 0.18 for the first order). The model beats the naive signal.
+
+5. Key signals. The model relies most on revenue_30d and first_month.
+
+6. Measurement. Customer value is very noisy (coefficient of variation 2.9). Detecting a +10% lift with 80% power needs about 25,536 new customers in total (522 weeks at this retailer's acquisition rate); a +20% lift needs 6,384 (130 weeks). Recommended design: a geo experiment estimated with difference-in-differences.
 ## Limitations
 
 - One retailer, mostly UK, many wholesale buyers: not a typical consumer e-commerce business.
