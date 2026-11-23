@@ -37,10 +37,6 @@ Ad platforms like Meta and Google usually value a new customer by their **first 
 - Simple features and models, with no tuning or causal methods.
 - Good ranking on historical data is not proof of incremental revenue: that needs the experiment in step 4.
 
-## How to run
-
-Click **Open in Colab** above, then **Runtime → Run all**. No installation needed.
-
 ## Author
 
-Mattia Mariani, MSc Applied Economics and Finance, Copenhagen Business School.
+Mattia Mariani
